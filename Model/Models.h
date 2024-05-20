@@ -2,43 +2,16 @@
 #define MODELS_H_
 
 #define LIM 100
+#define LimEstado 2
 
 typedef enum { Gerente, funcionario } Cargo;
-typedef enum {
-  AC,
-  AL,
-  AP,
-  AM,
-  BA,
-  CE,
-  DF,
-  ES,
-  GO,
-  MA,
-  MT,
-  MG,
-  PA,
-  PB,
-  PR,
-  PE,
-  PI,
-  RJ,
-  RN,
-  RS,
-  RO,
-  RR,
-  SC,
-  SP,
-  SE,
-  TO
-} Estado;
 
 typedef struct {
   int cep;
   int NumCasa;
   char Bairro[LIM];
   char Cidade[LIM];
-  Estado estado;
+  char estado[LimEstado];
 } Endereco;
 
 typedef struct {
@@ -47,7 +20,7 @@ typedef struct {
   int Ano;
 } Data;
 
-struct Funcionario {
+typedef struct {
   int Codigo;
   int CPF;
   char Nome[LIM];
@@ -56,9 +29,9 @@ struct Funcionario {
   Cargo cargo;
   int Telefone;
   int Senha;
-};
+} Funcionario;
 
-struct Conta_Corrente {
+typedef struct {
   int Agencia;
   int Limite;
   Data Vencimento;
@@ -69,9 +42,9 @@ struct Conta_Corrente {
   int Telefone;
   Endereco endereco;
   int Senha;
-};
+} Conta_Corrente;
 
-struct Conta_Poupanca {
+typedef struct {
   int Agencia;
   int NumConta;
   char Nome[LIM];
@@ -80,6 +53,6 @@ struct Conta_Poupanca {
   int Telefone;
   Endereco endereco;
   int Senha;
-};
+} Conta_Poupanca;
 
 #endif // MODELS_H_
