@@ -1,11 +1,24 @@
 #include "Menu.h"
+#include "./Cliente/MenuC.h"
+#include "./Funcionario/MenuF.h"
 #include <stdio.h>
 
 void Menu_Principal() {
+  int Escolha;
   printf("1 - funcionario\n2 - Cliente\n3 - Sair do Programa");
+  switch (Escolha) {
+  case 1:
+    Principal_Funcionario();
+    break;
+  case 2:
+    Principal_Cliente();
+    break;
+  default:
+    return;
+  }
 }
 
-void Digite_Senha(int op) {
+int Digite_Senha(int op) {
   switch (op) {
   case 1:
     break;
@@ -16,4 +29,5 @@ void Digite_Senha(int op) {
   default:
     break;
   }
+  return 0;
 }
