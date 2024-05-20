@@ -1,11 +1,11 @@
 #ifndef MENUF_H_
 #define MENUF_H_
 
-void Menu_Principal_Funcionario();
+void Principal_Funcionario();
 
-void MFuncionario_Abertura();
+int MFuncionario_Abertura();
 
-void MFuncionario_Encerramento();
+int MFuncionario_Encerramento();
 
 void MFuncionario_Consulta();
 
