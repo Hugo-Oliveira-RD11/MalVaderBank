@@ -1,7 +1,7 @@
 #ifndef MENUC_H_
 #define MENUC_H_
 
-void Menu_Principal_Cliente();
+void Principal_Cliente();
 
 void MCliente_Saldo();
 
