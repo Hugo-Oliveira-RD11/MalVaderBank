@@ -55,4 +55,7 @@ cmake-build-debug/
 # jetbrains
 .idea/
 
+# My builds
+build/
+
 /.notations
