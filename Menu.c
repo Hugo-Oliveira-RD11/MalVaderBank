@@ -4,18 +4,25 @@
 #include <stdio.h>
 
 void Menu_Principal() {
-  int Escolha;
+  int escolha;
   printf("1 - funcionario\n2 - Cliente\n3 - Sair do Programa");
-  switch (Escolha) {
-  case 1:
-    Principal_Funcionario();
-    break;
-  case 2:
-    Principal_Cliente();
-    break;
-  default:
-    return;
-  }
+  scanf("%d", &escolha);
+  do {
+    switch (escolha) {
+    case 1:
+      Principal_Funcionario();
+      break;
+    case 2:
+      Principal_Cliente();
+      break;
+    case 3:
+      return;
+      break;
+    default:
+      continue;
+      break;
+    }
+  } while (1);
 }
 
 int Digite_Senha(int op) {
@@ -31,3 +38,10 @@ int Digite_Senha(int op) {
   }
   return 0;
 }
+
+void LimpaBuffer() {
+  while ((getchar()) != '\n')
+    ;
+}
+
+

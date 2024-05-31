@@ -12,4 +12,6 @@ int Digite_Senha(int op);
 
 void Menu_Principal();
 
+void LimpaBuffer();
+
 #endif // MENU_H_

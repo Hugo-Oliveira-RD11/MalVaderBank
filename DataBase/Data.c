@@ -1,7 +1,6 @@
 #include "Data.h"
 #include "../Menu.h"
 #include "../Model/Models.h"
-#include "../Program.c"
 #include "stdio.h"
 #include "string.h"
 
@@ -31,4 +30,12 @@ void Insere_arquivoF(FILE *a, Funcionario f) {
           f.endereco.Cidade, f.data.Ano, f.data.Mes, f.data.Dia);
 }
 
-void Insere_arquivoCC(FILE *a, Conta_Corrente c) {}
+void Insere_arquivoCP(FILE *a, Conta_Poupanca c) {
+  fprintf(a,
+          "agencia: %d, N° conta: %d, Nome: %s, CPF : %d, data: %d/%d/%d,"
+          " Estado:%s, Cep: %d, numero da casa: %d, bairro %s, "
+          "Cidade: %s, Telefone: %d, senha: %d\n",
+          c.Agencia, c.NumConta, c.Nome, c.CPF, c.data.Ano, c.data.Mes,
+          c.data.Dia, c.endereco.estado, c.endereco.cep, c.endereco.NumCasa,
+          c.endereco.Bairro, c.endereco.Cidade, c.Telefone, c.Senha);
+}

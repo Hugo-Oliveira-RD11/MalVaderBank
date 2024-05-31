@@ -1,1 +1,6 @@
-int main() { return 0; }
+#include "Menu.h"
+#include <stdio.h>
+int main() {
+    Menu_Principal();
+    return 0;
+}
