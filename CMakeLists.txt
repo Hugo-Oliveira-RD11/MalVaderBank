@@ -11,5 +11,4 @@ add_executable(banquinho Menu.c
                 Funcionario/MenuF.h
                 Funcionario/MenuF.c
                 Model/Models.h
-        Program.c
-        Funcionario/MenuF.c)
+                Program.c)

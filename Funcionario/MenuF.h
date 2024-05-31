@@ -1,5 +1,6 @@
 #ifndef MENUF_H_
 #define MENUF_H_
+#include "stdio.h"
 
 void Principal_Funcionario();
 

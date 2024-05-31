@@ -6,17 +6,12 @@
 
 char es[2];
 
-FILE *caminho_arquivo(char path[LIM]) {
-  int tamanho = strlen(path), i = 0;
-  char caminho[tamanho];
-  tamanho--;
-  while (tamanho > i) {
-    caminho[i] = path[i];
-    i++;
-  }
-  FILE *f = fopen(caminho, "w");
-  return f;
+FILE *Abrindo_Arquivo() {
+  FILE *fl = fopen("Banquinho.txt", "wb");
+  return fl;
 }
+
+void Fechando_Arquivo(FILE *fl) { fclose(fl); }
 
 void Insere_arquivoF(FILE *a, Funcionario f) {
 
@@ -29,6 +24,8 @@ void Insere_arquivoF(FILE *a, Funcionario f) {
           f.endereco.cep, f.endereco.NumCasa, f.endereco.Bairro,
           f.endereco.Cidade, f.data.Ano, f.data.Mes, f.data.Dia);
 }
+
+void Insere_arquivoCC(FILE *a, Conta_Corrente c) {}
 
 void Insere_arquivoCP(FILE *a, Conta_Poupanca c) {
   fprintf(a,

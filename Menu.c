@@ -5,9 +5,9 @@
 
 void Menu_Principal() {
   int escolha;
-  printf("1 - funcionario\n2 - Cliente\n3 - Sair do Programa");
-  scanf("%d", &escolha);
   do {
+    printf("1 - funcionario\n2 - Cliente\n3 - Sair do Programa\n");
+    scanf("%d", &escolha);
     switch (escolha) {
     case 1:
       Principal_Funcionario();
@@ -19,11 +19,18 @@ void Menu_Principal() {
       return;
       break;
     default:
+      printf("!!DIGITE UM NUMERO VALIDO!!\n");
       continue;
       break;
     }
   } while (1);
 }
+
+/*
+** op = 1 e gerente
+** op = 2 e subgerente
+** op = 3 e Conta Corrente
+*/
 
 int Digite_Senha(int op) {
   switch (op) {
@@ -43,5 +50,3 @@ void LimpaBuffer() {
   while ((getchar()) != '\n')
     ;
 }
-
-
