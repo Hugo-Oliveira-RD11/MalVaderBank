@@ -3,6 +3,8 @@
 #include <stdio.h>
 
 int main() {
-  Menu_Principal();
+  //Abrir arquivo.
+
+    Menu_Principal();
   return 0;
 }

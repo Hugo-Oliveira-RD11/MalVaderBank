@@ -14,7 +14,7 @@ void MFuncionario_Alterar();
 void MFuncionario_CadastroNovoFuncionario();
 void MFuncionario_Relatorio();
 
-void Principal_Funcionario(FILE *a) {
+void Principal_Funcionario() {
 
   int escolha = 0, verifica = 0;
   do {
@@ -26,6 +26,7 @@ void Principal_Funcionario(FILE *a) {
     switch (escolha) {
     case 1:
       verifica = MFuncionario_Abertura();
+      // colocar verificação (talvez)
       break;
     case 2:
       verifica = MFuncionario_Encerramento();
@@ -43,7 +44,7 @@ void Principal_Funcionario(FILE *a) {
       MFuncionario_Relatorio();
       break;
     case 7:
-      Menu_Principal(a);
+      Menu_Principal();
       break;
     default:
       printf("Opção invalida");
@@ -54,10 +55,8 @@ void Principal_Funcionario(FILE *a) {
 }
 
 int MFuncionario_Abertura() {
-  FILE *fl = Abrindo_Arquivo();
   int escolha = 0;
   do {
-
     printf("1 - conta poupança - CP\n2 - conta corrente - CC\n3 - Voltar");
     scanf("%d", &escolha);
     switch (escolha) {
@@ -102,63 +101,65 @@ int MFuncionario_Abertura() {
       printf("digite a a senha do cliente\n");
       scanf("d", &conta.Senha);
 
-      Insere_arquivoCP(fl, conta);
+      Insere_arquivoCP(conta);
       break;
     case 2:
 
-      Conta_Corrente conta;
+      Conta_Corrente conta2;
 
       printf("digite o agencia:\n");
-      scanf("%d", &conta.Agencia);
+      scanf("%d", &conta2.Agencia);
 
       printf("digite o limite da conta\n");
-      scanf("%d", &conta.Limite);
+      scanf("%d", &conta2.Limite);
 
       printf("digite a data de vencimento do limite da conta\n");
-      scanf("%d %d %d", &conta.Vencimento.Dia, &conta.Vencimento.Mes,
-            &conta.Vencimento.Ano);
+      scanf("%d %d %d", &conta2.Vencimento.Dia, &conta2.Vencimento.Mes,
+            &conta2.Vencimento.Ano);
 
       printf("digite a conta:\n");
-      scanf("%d", &conta.NumConta);
+      scanf("%d", &conta2.NumConta);
 
       printf("digite o cpf:\n");
-      scanf("%d", &conta.CPF);
+      scanf("%d", &conta2.CPF);
 
       LimpaBuffer(); // chama o while para limpar o buffer, se não da o fgets n
                      // funciona.
       printf("digite a Nome:\n");
-      fgets(conta.Nome, sizeof(conta.Nome), stdin);
+      fgets(conta2.Nome, sizeof(conta2.Nome), stdin);
 
       printf("digite o telefone\n");
-      scanf("%d", &conta.Telefone);
+      scanf("%d", &conta2.Telefone);
 
       printf("digite o cep\n");
-      scanf("%d", &conta.endereco.cep);
+      scanf("%d", &conta2.endereco.cep);
 
       printf("digite o numero da casa\n");
-      scanf("%d", &conta.endereco.NumCasa);
+      scanf("%d", &conta2.endereco.NumCasa);
 
       LimpaBuffer();
       printf("digite o Bairro\n");
-      fgets(conta.endereco.Bairro, sizeof(conta.endereco.Bairro), stdin);
+      fgets(conta2.endereco.Bairro, sizeof(conta2.endereco.Bairro), stdin);
 
       LimpaBuffer();
       printf("digite a cidade\n");
-      fgets(conta.endereco.Cidade, sizeof(conta.endereco.Cidade), stdin);
+      fgets(conta2.endereco.Cidade, sizeof(conta2.endereco.Cidade), stdin);
 
       LimpaBuffer();
       printf("digite o Estado: [DF - SP - RJ]\n");
-      fgets(conta.endereco.estado, sizeof(conta.endereco.estado), stdin);
+      fgets(conta2.endereco.estado, sizeof(conta2.endereco.estado), stdin);
 
       printf("digite a a senha do cliente\n");
-      scanf("d", &conta.Senha);
+      scanf("d", &conta2.Senha);
 
-      Insere_arquivoCC(fl, conta);
+      Insere_arquivoCC(conta2);
       break;
     case 3:
       Principal_Funcionario();
       break;
     default:
+      printf("Opcao invalida, digite um numero valido por favor.");
+      continue;
       break;
     }
   } while (1);

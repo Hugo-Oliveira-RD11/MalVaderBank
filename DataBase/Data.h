@@ -7,8 +7,8 @@
 
 FILE *Abrindo_Arquivo();
 
-void Insere_arquivoF(FILE *a, Funcionario f);
-void Insere_arquivoCC(FILE *a, Conta_Corrente c);
-void Insere_arquivoCP(FILE *a, Conta_Poupanca c);
+void Insere_arquivoF(Funcionario f);
+void Insere_arquivoCC(Conta_Corrente c);
+void Insere_arquivoCP(Conta_Poupanca c);
 
 #endif // DATA_H_

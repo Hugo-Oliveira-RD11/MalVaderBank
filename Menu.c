@@ -19,7 +19,7 @@ void Menu_Principal() {
       return;
       break;
     default:
-      printf("!!DIGITE UM NUMERO VALIDO!!\n");
+      printf("Opcao invalida, digite um numero valido p\n");
       continue;
       break;
     }
